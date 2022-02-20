@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partial/head') %>
+
+<body>
+  <%- include('partial/navbar') %>
+  <div class="container-fluid">
+    <h1 class="text-center">User Game List</h1>
+    <a href="/add">
+      <button class="btn btn-primary mb-2 mt-2">Add List</button>
+    </a>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach(item => { %>
+        <tr>
+          <td><%= item._id %> </td>
+          <td><%= item.uname %> </td>
+          <td><%= item.password %> </td>
+          <td>
+            <div class="row">
+              <div class="col-6">
+                <a href="/edit?id=<%= item._id %>">
+                  <button class="btn btn-warning">
+                    Edit
+                  </button>
+                </a>
+              </div>
+
+              <div class="col-6">
+                <form action="/delete?id=<%= item._id %>" method="POST">
+                  <button class="btn btn-danger">
+                    Delete
+                  </button>
+                </form>
+              </div>
+            </div>
+
+
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+      <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Welcome, <%= user %> </span>
+    <span class="navbar-brand mb-0 h1">
+      <form action="/logout" method="post">
+        <button class="btn btn-danger" type="submit">Logout</button>
+      </form>
+    </span>
+  </div>
+</nav>

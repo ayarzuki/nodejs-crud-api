@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('partial/head') %>
+
+	<body>
+		<%- include('partial/navbar') %>
+		<div class="container-fluid">
+			<h1 class="text-center">Edit Entry</h1>
+			<div class="">
+				<form action="/edit?id=<%= data._id %> " method="POST">
+					<input
+						class="form-control w-100"
+						type="text"
+						name="uname"
+						value="<%= data.uname %> "
+						placeholder="Masukkan Username"
+					/>
+					<input
+						class="form-control w-100 mt-2"
+						type="text"
+						name="password"
+						value="<%= data.password %> "
+						placeholder="Masukkan Password"
+					/>
+					<div class="text-center mt-2">
+						<button class="btn btn-warning btn-lg">Edit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
